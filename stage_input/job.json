@@ -1,0 +1,8 @@
+{
+  "src": {
+    "class": "File",
+    "path": "./data/Hello1.txt"
+  },
+
+  "target": "Hello2.txt"
+}
