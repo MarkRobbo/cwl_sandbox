@@ -1,0 +1,32 @@
+#################################################################
+# Dockerfile
+#
+# Software:         fastqc
+# Software Version: 0.11.2+dfsg-3
+# Description:      fastqc image for SciDAP
+# Website:          http://www.bioinformatics.babraham.ac.uk/projects/fastqc/
+# Provides:         Babraham Bioinformatics
+# Base Image:       scidap/scidap:v0.0.1
+# Build Cmd:        docker build --rm -t scidap/fastqc:v0.11.2 .
+# Pull Cmd:         docker pull scidap/fastqc:v0.11.2
+# Run Cmd:          docker run --rm scidap/fastqc:v0.11.2 fastqc
+#################################################################
+
+### Base Image
+FROM scidap/scidap:v0.0.1
+MAINTAINER Michael Kotliar "misha.kotliar@gmail.com"
+ENV DEBIAN_FRONTEND noninteractive
+
+################## BEGIN INSTALLATION ######################
+
+WORKDIR /tmp
+
+### Installing fastqc
+
+ENV VERSION 0.11.2+dfsg-3
+ENV NAME fastqc
+
+RUN apt-get update && apt-get --yes upgrade && apt-get install --yes \
+  ${NAME}="${VERSION}" \
+  libfindbin-libs-perl
+

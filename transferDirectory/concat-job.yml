@@ -1,0 +1,4 @@
+{
+  "files": [{"class": "File", "location": "./fileA.txt"},
+            {"class": "File", "location": "./fileB.txt"}]
+}
