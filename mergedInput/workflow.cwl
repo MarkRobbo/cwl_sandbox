@@ -19,7 +19,7 @@ steps:
   concat:
     run: ./concat.cwl
     in:
-      files: [fileA, fileB]
+      files: [fileA]
     out: [outputFile]
 
 
