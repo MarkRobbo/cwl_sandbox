@@ -19,7 +19,6 @@ outputs:
 
 steps:
   sum:
-    run: sum.cwl
     in:
       data:
         source: [int_1, int_2]
@@ -31,7 +30,19 @@ steps:
             };
             return sum;
           }
-    out: [result]
+    out:
+    - result
+    run:
+      class: ExpressionTool
+      inputs:
+        data:
+          type: int
+      outputs:
+        result: int
+      expression: |
+        ${
+          return {"result": inputs.data};
+        }
 
 
 
