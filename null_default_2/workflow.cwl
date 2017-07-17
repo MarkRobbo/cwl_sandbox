@@ -5,7 +5,7 @@ inputs:
   input_file:
     type: File?
     default: null
-    format: "http://edamontology.org/format_2572"
+    format: "iana:text/tab-separated-values"
 
 outputs: []
 
@@ -17,15 +17,4 @@ steps:
     out: []
 
 $namespaces:
-  s: http://schema.org/
-$schemas:
-- http://schema.org/docs/schema_org_rdfa.html
-s:name: "workflow"
-
-
-
-
-
-
-
-
+  iana: https://www.iana.org/assignments/media-types/
